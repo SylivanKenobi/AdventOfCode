@@ -33,4 +33,10 @@ lines.each do |line|
     id = row * 8 + column
     ids << id
 end
-pp ids.sort[ids.length - 1]
+ids.sort!
+ids.each_with_index do |id, i|
+    if ids[i+1] - id == 2
+        pp id
+        pp ids[i+1]
+    end
+end
