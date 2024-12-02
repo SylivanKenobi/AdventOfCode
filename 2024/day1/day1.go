@@ -1,4 +1,4 @@
-package day1_part1
+package day1
 
 import (
 	"adventofcode/utils"
