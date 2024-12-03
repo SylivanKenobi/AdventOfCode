@@ -2,7 +2,6 @@ package day1
 
 import (
 	"adventofcode/utils"
-	"fmt"
 	"math"
 	"sort"
 	"strconv"
@@ -28,7 +27,6 @@ func Part1(file string) int {
 		dist := leftList[i] - rightList[i]
 		totalDist = int(math.Abs(float64(dist))) + totalDist
 	}
-	fmt.Println(totalDist)
 	return totalDist
 }
 
@@ -54,6 +52,5 @@ func Part2(file string) int {
 		}
 		similarity += (left * matches)
 	}
-	fmt.Println(similarity)
 	return similarity
 }

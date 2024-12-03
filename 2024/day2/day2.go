@@ -2,7 +2,6 @@ package day2
 
 import (
 	"adventofcode/utils"
-	"fmt"
 	"math"
 	"strconv"
 	"strings"
@@ -22,7 +21,6 @@ func Part1(file string) int {
 			validLine += 1
 		}
 	}
-	fmt.Println(validLine)
 	return validLine
 }
 
@@ -46,7 +44,6 @@ func Part2(file string) int {
 			validLine += 1
 		}
 	}
-	fmt.Println(validLine)
 	return validLine
 }
 
