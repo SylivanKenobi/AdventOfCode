@@ -51,12 +51,38 @@ func Part1(file string) int {
 }
 
 func Part2(file string) int {
-	// lines := utils.ReadFileByLine(file)
-	result := 0
+	lines := utils.ReadFileByLine(file)
 
+	result := 0
+	for i, line := range lines {
+		for j := range line {
+			letters := strings.Split(line, "")
+			if letters[j] == "M" || letters[j] == "S" {
+				down := false
+				up := false
+				// diagonal down right
+				if len(lines)-2 > i && len(letters)-2 > j {
+					ddr := strings.Join([]string{string(lines[i][j]), string(lines[i+1][j+1]), string(lines[i+2][j+2])}, "")
+					down = Mas(ddr)
+				}
+				// diagonal down left
+				if len(lines)-2 > i && len(letters)-2 > j && down {
+					ddl := strings.Join([]string{string(lines[i][j+2]), string(lines[i+1][j+1]), string(lines[i+2][j])}, "")
+					up = Mas(ddl)
+				}
+				if up && down {
+					result += 1
+				}
+			}
+		}
+	}
 	return result
 }
 
 func Holliday(holliday string) bool {
 	return (holliday == "XMAS" || holliday == "SAMX")
+}
+
+func Mas(holliday string) bool {
+	return (holliday == "MAS" || holliday == "SAM")
 }
