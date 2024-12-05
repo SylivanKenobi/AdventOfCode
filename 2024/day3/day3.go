@@ -2,7 +2,6 @@ package day3
 
 import (
 	"adventofcode/utils"
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -23,7 +22,6 @@ func Part1(file string) int {
 		num2, _ := strconv.Atoi(numbers[1])
 		result += (num1 * num2)
 	}
-	fmt.Println(result)
 	return result
 }
 
