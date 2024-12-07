@@ -7,6 +7,7 @@ import ( // "context"
 	day4 "adventofcode/day4"
 	day5 "adventofcode/day5"
 	day6 "adventofcode/day6"
+	day7 "adventofcode/day7"
 	"fmt"
 )
 
@@ -44,4 +45,9 @@ func main() {
 	fmt.Println(len(sol))
 	fmt.Println("day 6 part 2")
 	fmt.Println(day6.Part2("6_1.txt", sol))
+
+	fmt.Println("day 7 part 1")
+	fmt.Println(day7.Part1("7_1.txt"))
+	fmt.Println("day 7 part 2")
+	fmt.Println(day7.Part2("7_1.txt"))
 }
