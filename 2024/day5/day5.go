@@ -4,7 +4,6 @@ import (
 	"adventofcode/utils"
 	"regexp"
 	"slices"
-	"strconv"
 	"strings"
 )
 
@@ -75,23 +74,14 @@ func splitInput(input []string) ([][]int, [][]int) {
 	for _, line := range input {
 		if line != "" {
 			if !blank {
-				rule := strToIntArr(regexp.MustCompile(`[0-9]*`).FindAllString(line, -1))
+				rule := utils.StrToIntArr(regexp.MustCompile(`[0-9]*`).FindAllString(line, -1))
 				rules = append(rules, rule)
 			} else {
-				updates = append(updates, strToIntArr(strings.Split(line, ",")))
+				updates = append(updates, utils.StrToIntArr(strings.Split(line, ",")))
 			}
 		} else {
 			blank = true
 		}
 	}
 	return rules, updates
-}
-
-func strToIntArr(input []string) []int {
-	var r []int
-	for _, n := range input {
-		a, _ := strconv.Atoi(n)
-		r = append(r, a)
-	}
-	return r
 }

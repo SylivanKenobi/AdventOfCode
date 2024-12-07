@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 )
 
 func ReadFileByLine(filename string) []string {
@@ -30,4 +31,13 @@ func ReadFileByLine(filename string) []string {
 	}
 
 	return file
+}
+
+func StrToIntArr(input []string) []int {
+	var r []int
+	for _, n := range input {
+		a, _ := strconv.Atoi(n)
+		r = append(r, a)
+	}
+	return r
 }

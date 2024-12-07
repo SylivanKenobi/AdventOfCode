@@ -40,7 +40,8 @@ func main() {
 	fmt.Println(day5.Part2("5_1.txt"))
 
 	fmt.Println("day 6 part 1")
-	fmt.Println(day6.Part1("6_1.txt"))
+	sol := day6.Part1("6_1.txt")
+	fmt.Println(len(sol))
 	fmt.Println("day 6 part 2")
-	fmt.Println(day6.Part2("6_1.txt"))
+	fmt.Println(day6.Part2("6_1.txt", sol))
 }
