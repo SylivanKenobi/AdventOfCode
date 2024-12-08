@@ -7,7 +7,6 @@ import (
 	"strconv"
 )
 
-// Always turn right till stopped
 func Part1(file string) int {
 	lines := utils.ReadFileByLine(file)
 	result := 0
